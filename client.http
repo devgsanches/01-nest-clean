@@ -1,0 +1,5 @@
+@baseURL = http://localhost:3333
+
+# @name HealthCheck
+GET {{baseURL}}/health-check
+Content-Type: application/json
