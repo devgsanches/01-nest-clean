@@ -1,15 +1,12 @@
-version: '3.8'
-
 services:
   postgres:
     container_name: nest-clean-pg
-    image: bitnami/postgresql:latest
+    image: bitnami/postgresql
     ports:
       - 5432:5432
     environment:
       POSTGRES_USER: app
       POSTGRES_PASSWORD: 1q2w3e4r
       POSTGRES_DB: nest-clean-db
-      PGDATA: /data/postgres
     volumes:
       - ./data/pg:/data/postgres
