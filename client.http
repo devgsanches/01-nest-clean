@@ -3,3 +3,14 @@
 # @name HealthCheck
 GET {{baseURL}}/health-check
 Content-Type: application/json
+
+### 
+POST {{baseURL}}/accounts
+Content-Type: application/json
+
+{
+    "name": "Guilherme Sanches",
+    "email": "guilherme.sanches@flapper.aero",
+    "password": "1q2w3e4r"
+}
+

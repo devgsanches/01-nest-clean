@@ -1,7 +1,5 @@
 generator client {
-  provider        = "prisma-client" // or `prisma-client-js`
-  output          = "../generated/prisma"
-  engineType      = "client" // enable Prisma ORM without Rust
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -9,12 +7,12 @@ datasource db {
 }
 
 model User {
-  id        String    @id @default(uuid())
+  id        String   @id @default(uuid())
   name      String
-  email     String    @unique
+  email     String   @unique
   password  String
-  createdAt DateTime  @default(now()) @map("created_at")
-  updatedAt DateTime? @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   questions Question[]
 
@@ -22,15 +20,16 @@ model User {
 }
 
 model Question {
-  id        String    @id @default(uuid())
+  id        String   @id @default(uuid())
   title     String
-  slug      String    @unique // o title não é unico, um slug é criado a partir do title, tomar cuidado com erros de inserção sql
+  slug      String   @unique
   content   String
-  createdAt DateTime  @default(now()) @map("created_at")
-  updatedAt DateTime? @updatedAt @map("updated_at")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   studentId String @map("student_id")
-  student   User   @relation(fields: [studentId], references: [id])
+
+  student User @relation(fields: [studentId], references: [id])
 
   @@map("questions")
 }
