@@ -43,6 +43,6 @@ Authorization: Bearer {{access_token}}
 ###
 
 # @name ListQuestions
-GET {{baseURL}}/questions
+GET {{baseURL}}/questions?page=1
 Content-Type: application/json
 Authorization: Bearer {{access_token}}
