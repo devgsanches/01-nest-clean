@@ -6,8 +6,8 @@ import {
   UsePipes,
 } from '@nestjs/common'
 import { z } from 'zod'
-import { PrismaService } from '../prisma/prisma.service'
-import { ZodValidationPipe } from '../pipes/zod-validation-pipe'
+import { PrismaService } from '@/prisma/prisma.service'
+import { ZodValidationPipe } from '@/pipes/zod-validation-pipe'
 import { compare } from 'bcryptjs'
 import { JwtService } from '@nestjs/jwt'
 

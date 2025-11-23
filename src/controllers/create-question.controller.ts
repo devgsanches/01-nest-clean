@@ -1,16 +1,12 @@
 import {
   Body,
   Controller,
-  Post,
-  Req,
-  UseGuards,
-  UsePipes,
+  Post, UseGuards
 } from '@nestjs/common'
 import { z } from 'zod'
-import { PrismaService } from '../prisma/prisma.service'
-import { ZodValidationPipe } from '../pipes/zod-validation-pipe'
+import { PrismaService } from '@/prisma/prisma.service'
+import { ZodValidationPipe } from '@/pipes/zod-validation-pipe'
 import { AuthGuard } from '@nestjs/passport'
-import { Request } from 'express'
 import { UserAuthenticated } from 'src/auth/user-authenticated-decorator'
 import { TokenPayload } from 'src/auth/jwt-strategy'
 import { toSlug } from 'src/utils/convert-to-slug'
