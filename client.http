@@ -36,6 +36,13 @@ Content-Type: application/json
 Authorization: Bearer {{access_token}}
 
 {
-    "title": "Nova pergunta com slug!! isso é um teste",
+    "title": "Nova pergunta com slug!! isso é um teste hehe :)",
     "content": "Conteúdo da pergunta"
 }
+
+###
+
+# @name ListQuestions
+GET {{baseURL}}/questions
+Content-Type: application/json
+Authorization: Bearer {{access_token}}
